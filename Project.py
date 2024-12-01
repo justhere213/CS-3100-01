@@ -38,8 +38,8 @@ def create_account():
     encrypted_password = encrypt_password(password)
     users[username] = {
         "password": encrypted_password,
-        "security_question_1": security_question_1,  # Stored as plain text
-        "security_question_2": security_question_2   # Stored as plain text
+        "security_question_1": security_question_1,
+        "security_question_2": security_question_2
     }
     print(f"Account for {username} created successfully!")
 
