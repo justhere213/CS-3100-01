@@ -1,7 +1,5 @@
 from Crypto.Cipher import DES
-import os
 import base64
-import getpass
 
 # DES key (Simulating a weak practice of storing it in plain text)
 DES_KEY = b'8bytekey'  # DES key must be exactly 8 bytes
@@ -33,7 +31,7 @@ def create_account():
         print("Username already exists!")
         return
 
-    password = getpass.getpass("Enter a password: ")
+    password = input("Enter a password: ")
     security_question_1 = input("What's your favorite color? ")
     security_question_2 = input("What's your first pet's name? ")
 
@@ -51,7 +49,7 @@ def login():
         print("Username not found!")
         return
     
-    password = getpass.getpass("Enter your password: ")
+    password = input("Enter your password: ")
     encrypted_password = users[username]["password"]
     decrypted_password = decrypt_password(encrypted_password)
 
