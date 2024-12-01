@@ -16,21 +16,18 @@ def pad(text):
     return text
 
 def encrypt_password(password):
-    """Encrypts the password using DES"""
     cipher = DES.new(DES_KEY, DES.MODE_ECB)
     padded_password = pad(password)
     encrypted_password = cipher.encrypt(padded_password.encode())
     return base64.b64encode(encrypted_password).decode()
 
 def decrypt_password(encrypted_password):
-    """Decrypts the password using DES"""
     cipher = DES.new(DES_KEY, DES.MODE_ECB)
     decoded_encrypted_password = base64.b64decode(encrypted_password)
     decrypted_password = cipher.decrypt(decoded_encrypted_password)
     return decrypted_password.decode().strip()
 
 def create_account():
-    """Creates a new user account"""
     username = input("Enter a username: ")
     if username in users:
         print("Username already exists!")
