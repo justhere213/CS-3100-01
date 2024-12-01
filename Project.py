@@ -49,7 +49,6 @@ def create_account():
     print(f"Account for {username} created successfully!")
 
 def login():
-    """Log into an existing account"""
     username = input("Enter your username: ")
     if username not in users:
         print("Username not found!")
