@@ -3,12 +3,13 @@ import base64
 import os
 from getpass import getpass
 
-AES_KEY = os.environ.get('AES_KEY', 'default_secure_key_1234')[:32].encode()  # Ensure it's 32 bytes
+AES_KEY = os.environ.get('AES_KEY', 'default_secure_key_1234')[:32].encode()
+#AES key is 32 bytes instead of DES's 8 bytes and is created as an environment variable to make it more secure
 
-#User database
 users = {}
 
 def pad(text):
+    """Pads cipher text to be 16 bytes instead of DES's 8"""
     while len(text) % 16 != 0:
         text += ' '
     return text

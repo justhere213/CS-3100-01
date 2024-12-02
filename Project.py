@@ -1,14 +1,12 @@
 from Crypto.Cipher import DES
 import base64
 
-# DES key (Simulating a weak practice of storing it in plain text)
-DES_KEY = b'8bytekey'  # DES key must be exactly 8 bytes
+DES_KEY = b'DES_KEY1'
 
-# Sample "database" for storing user data
 users = {}
 
 def pad(text):
-    """Pads the text to make it a multiple of 8 bytes for DES"""
+    """Pads text to make it a multiple of 8 for encryption"""
     while len(text) % 8 != 0:
         text += ' '
     return text
@@ -75,7 +73,6 @@ def recover_password():
         print("Security questions failed. Cannot recover password.")
 
 def menu():
-    """Main menu for the password manager"""
     while True:
         print("\n1. Create Account")
         print("2. Log In")
