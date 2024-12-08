@@ -44,6 +44,10 @@ def create_account():
         "email": email
     }
     print(f"Account for {username} created successfully!")
+    print("""To ensure your account remains secure, please follow these guidelines:
+Avoid sharing passwords or recovery links with anyone.
+Be cautious of phishing attempts, especially emails thatmimic legitimate communications.
+Regularly update passwords to reduce the impact of compromised credentials.""")
 
 def login():
     username = input("Enter your username: ")
